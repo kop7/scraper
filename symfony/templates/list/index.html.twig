@@ -1,0 +1,39 @@
+{# templates/list/index.html.twig #}
+
+{% extends 'base.html.twig' %} {% block
+    body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-light mb-3 mt-3">
+                    <div class="card-body">
+                        <div class="card-header">Statistic</div>
+                        <AmpContent>
+                            <table class="table">
+                                <tr>
+                                    <th>Search term</th>
+                                    <th>Total count</th>
+                                    <th>Total positive</th>
+                                    <th>Total negative</th>
+                                    <th>Score</th>
+                                    <th>Provider</th>
+                                </tr>
+                                {% for list in lists %}
+                                    <tr>
+                                        <td>{{ list.name }}</td>
+                                        <td>{{ list.countAll }}</td>
+                                        <td>{{ list.countPositive }}</td>
+                                        <td>{{ list.countNegative }}</td>
+                                        <td>{{ list.score }}</td>
+                                        <td>{{ list.provider }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+
+                            </NonAmpContent>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
